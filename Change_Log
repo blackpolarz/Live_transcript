@@ -1,0 +1,41 @@
+Version: 1.00 Date: 7/7/2023
+- Initial implementation of Live Transcription Project
+- Implemented using sounddevice, espnet, espnet-model-zoo, huggingface, reazonspeech-espnet
+
+- Issues #0001: Audio can only be captured using a speaker and mic. (Environment noise will affect the capturing process)
+         #0002: When no audio is detected, transcriptions such as "うん","はい" is recorded.
+
+Version: 1.1 Date: 9/7/2023
+- Implemented translation using opensource argostranslate
+
+-Issues #0003: Some JP translations cannot be translated. 
+
+Version: 1.2 Date: 17/7/2023
+- Implemented Virtual Audio Device from https://vb-audio.com/Cable/ (Resolved issue #0001)
+
+-Issues #0004: sounddevice.sleep is a blocking method and causing some audio to be dropped, resulting in poor audio capture.
+
+Version 1.3 Date: 19/7/2023
+- Implemented both reazonspeech-espnet and reazonspeech-espnet-next for comparison.
+- Implemented Queue.queue as a non-blocking method to continuously capture audio (Resolved issue #0004)
+- Implemented simple filter to detect silence, minimising issue #0002. (Mitigate issue #0002)
+- Tried to modify n_best parameter but somehow the results were identical. 
+
+Version 1.4 Date: 23/7/2023
+- Implemented dynamic thresholding to deal with noisy environment 
+- Implemented Open-AI whisper model through huggingface pipeline. (Mitigated #0003)
+
+- Issues #0005: Dynamic thresholding is unable to handle sudden change in environment, leading to some transcription being lost.
+         #0006: Significantly long transcription time when multiple speakers were speaking
+         #0007: Queue overloaded with significant amount of audio in queue, failing to achieve its original purpose of real time transcription and live translation.
+
+Version 1.5 Date: 1/8/2023
+- Implemented huggingface accelerate to reduce transcription time (Mitigate #0006)
+- Lowered audio capture block size (Mitigate #0006)
+- Set sounddevice to temporary sleep when queue size is big (Resolved #0007) 
+      (Alternative methods (tried & not implemented): Queue Flushing & Queue Limit)
+- Set hard limits to dynamic thresholding (Resolved #0005)
+- Cleaned up the code and uploaded to Github.
+
+- Issues #0008: Transcription getting affected by loud bgm or game sounds in streams.
+         #0009: Multiple Instances of transcription appeared even though the audio was spoken only once.
