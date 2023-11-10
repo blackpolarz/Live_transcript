@@ -39,3 +39,12 @@ Version 1.5 Date: 1/8/2023
 
 - Issues #0008: Transcription getting affected by loud bgm or game sounds in streams.
          #0009: Multiple Instances of transcription appeared even though the audio was spoken only once.
+
+Version 1.6 Date: 8/11/2023
+- Rewritten the entire code to use faster-whisper instead of huggingface transformers. (Resolved #0006)
+- Added prompting as parameters to improve faster-whisper's ability to handle names.
+- Applied faster-whisper's VAD to detect silence. 
+- Finetuned faster-whisper's parameters to provide better translations for real time application. (Mitigated #0009)
+- Added logs and configuration file to easily modify and test.
+
+
