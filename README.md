@@ -1,7 +1,15 @@
 # Live_transcript
 A simplified application of ASR models for transcribing real time streams.\
 Current version: 1.6 \
-OS: Windows
+OS: Windows \
+Currently supported models:Whisper large-v2, Whisper large-v3 \
+Note:To use Whisper large-v3, you will need an updated ctranslate2 and updated faster-whisper which is currently not available on pypi.
+
+**DISCLAIMER: This is a simple application of zero-shot ASR models and its translation should not be trusted completely due to the inaccuracies of ASR.
+Please take all translations with a grain of salt and it should only serve as an secondary aid to help understand the context of streams, videos or anime.
+Please avoid using the translations as evidence that can potentially harm any streamers or content creators as the model tends to hallucinate and can provide
+misinformation.**
+
 
 ## Requirements: 
 1) Python 3.11
