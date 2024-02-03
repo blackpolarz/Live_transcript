@@ -47,4 +47,10 @@ Version 1.6 Date: 8/11/2023
 - Finetuned faster-whisper's parameters to provide better translations for real time application. (Mitigated #0009)
 - Added logs and configuration file to easily modify and test.
 
-
+Version 1.7 Date: 3/2/2024
+- Added support for faster-whisper large model v3. Whisper v3 is better at Grammer but tends to hallucinate and put words which can change the context.
+Whisper v2 is not as good in Grammer but tries to output whatever as spoken.
+- Added GUI for ease of changing options (Will require pyqt6 to use the GUI) 
+- Added Text processing feature to combine sentences, replace extra words, remove hallucinations to some extent.
+- Added file_only mode to quickly run files using the configuration set. File_mode does not use process the text. 
+- Tested demucs but it seems to be performing worse after demucs. (Dropped as of now for this project)
