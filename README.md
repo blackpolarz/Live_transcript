@@ -1,9 +1,8 @@
 # Live_transcript
 A simplified application of ASR models for transcribing real time streams.\
-Current version: 1.6 \
+Current version: 1.7 \
 OS: Windows \
 Currently supported models:Whisper large-v2, Whisper large-v3 \
-Note:To use Whisper large-v3, you will need an updated ctranslate2 and updated faster-whisper which is currently not available on pypi.
 
 **DISCLAIMER: This is a simple application of zero-shot ASR models and its translation should not be trusted completely due to the inaccuracies of ASR.
 Please take all translations with a grain of salt and it should only serve as an secondary aid to help understand the context of streams, videos or anime.
@@ -14,7 +13,7 @@ misinformation.**
 ## Requirements: 
 1) Python 3.11
 2) numpy
-3) pytorch with cuda @ https://pytorch.org/get-started/locally/
+3) pytorch with cuda 11.8 @ https://pytorch.org/get-started/locally/
 4) virtual audio cable @ https://vb-audio.com/Cable/
 
 ## Installation Guide:
@@ -27,7 +26,7 @@ misinformation.**
 ## How to run the code:
 1) Go to anaconda prompt/cmd and type
 ```
-   python Live_Transcript_v1.6.py
+   python Live_Transcript.py
 ```
 2) Alternatively, create the bat file as follow: (Remember to replace DIR_ANACONDA with your activate.bat directory,
    ENV_NAME with your virtual environment and DIR_CODE with the directory of your code)
