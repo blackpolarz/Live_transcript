@@ -2,7 +2,7 @@
 A simplified application of ASR models for transcribing real time streams.\
 Current version: 1.7 \
 OS: Windows \
-Currently supported models:Whisper large-v2, Whisper large-v3 \
+Currently supported models:Whisper large-v2, Whisper large-v3
 
 **DISCLAIMER: This is a simple application of zero-shot ASR models and its translation should not be trusted completely due to the inaccuracies of ASR.
 Please take all translations with a grain of salt and it should only serve as an secondary aid to help understand the context of streams, videos or anime.
