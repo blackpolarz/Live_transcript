@@ -1,3 +1,7 @@
-faster-whisper==0.10.0
-sounddevice==0.4.6
+pycaw
+comtypes
+faster-whisper==1.0.3
+ctranslate2
+sounddevice
 PyQt6
+PySide6
