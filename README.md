@@ -1,6 +1,6 @@
 # Live_transcript
 A simplified application of ASR models for transcribing real time streams.\
-Current version: 1.7 \
+Current version: 1.8 \
 OS: Windows \
 Currently supported models:Faster-Whisper large-v2, Faster-Whisper large-v3
 
@@ -11,10 +11,11 @@ misinformation.**
 
 
 ## Requirements: 
-1) Python 3.11
+1) Python 3.12
 2) numpy
-3) pytorch with cuda 11.8 @ https://pytorch.org/get-started/locally/
-4) virtual audio cable @ https://vb-audio.com/Cable/
+3) pytorch with cuda 12 @ https://pytorch.org/get-started/locally/
+   (Note: Currently, torchaudio <= 2.3.1 as ctranslate2 does not support cudnn9) 
+5) virtual audio cable @ https://vb-audio.com/Cable/
 
 ## Installation Guide:
 1) Download the repository in zip, unzip it.
@@ -26,7 +27,7 @@ misinformation.**
 ## How to run the code:
 1) Go to anaconda prompt/cmd and type
 ```
-   python Live_Transcript.py
+   python Live_Transcript_v1.8.py
 ```
 2) Alternatively, create the bat file as follow: (Remember to replace DIR_ANACONDA with your activate.bat directory,
    ENV_NAME with your virtual environment and DIR_CODE with the directory of your code)
@@ -38,18 +39,19 @@ misinformation.**
   python DIR_CODE
   call conda deactivate
 ```
+
+## CLI support:
+For users who prefer Command Line Interface instead of GUI,
+users can simply type:
+python Live_Transcript_v1.8.py --no_gui
+
+Users can also change the options in the parameters by typing -o, --config_file , --input_file, --output_file. 
+
 ## FAQ:
 1) Question: There is no transcription showing up.\
 Answer: Kindly set your audio devices on windows to CABLE INPUT and CABLE OUTPUT. 
 <img src="https://github.com/blackpolarz/Live_transcript/assets/126226575/9d5ffcb7-32f1-48c3-82da-14ba0dc7bdec" width=40% height=40%>
 
-2) Question: There is no audio.\
-Please go to more sound setting in the sound setting.
-<img src="https://github.com/blackpolarz/Live_transcript/assets/126226575/bf7809f1-de6d-4ace-9c8a-d203d3a43386" width=40% height=40%>
-
-Select the Recording tab,CABLE OUTPUT properties.Select the Listen tab and check the Listen to this device. \
-Please change the playback through this device to your headphone or speaker. \
-<img src="https://github.com/blackpolarz/Live_transcript/assets/126226575/e7f438da-23d6-4e4b-94c0-8db8d5e1491c" width=30% height=30%>  <img src="https://github.com/blackpolarz/Live_transcript/assets/126226575/972bee94-41ce-4389-b181-dfce9121427f" width=30% height=30%>
 
 ## Acknowledgement:
 All copyrights belong to original authors of faster-whisper, whisper, sound-device and pytorch.
