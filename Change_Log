@@ -54,3 +54,9 @@ Whisper v2 is not as good in Grammer but tries to output whatever as spoken.
 - Added Text processing feature to combine sentences, replace extra words, remove hallucinations to some extent.
 - Added file_only mode to quickly run files using the configuration set. File_mode does not use process the text. 
 - Tested demucs but it seems to be performing worse after demucs. (Dropped as of now for this project)
+
+Version 1.8 Date: 2/10/2024
+- Added more user-friendly GUI for users.
+- Added post-processing functions to combine sentences, eliminate hallucinations.
+- Added CLI support for users to use with or without GUI.
+- Added additional modules to directly interact with listen to tab in windows, reduce user complexity.
